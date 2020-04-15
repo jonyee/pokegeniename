@@ -16,7 +16,7 @@ Settings changes you may want to change on your phone:
 
 ## How to Use ##
 
-Download the powershell script and update all the coordinates with the appropriate coordinates for your phone.  I wrote this to the exact coordinates for my phone (OnePlus 6T), and unless you happen to have the exact same phone this script will probably not work for you.
+Download the powershell script and update all the coordinates with the appropriate coordinates for your phone.  I wrote this to the exact coordinates for my phone (OnePlus 6T using gboard), and unless you happen to have the exact same phone and keyboard this script will probably not work for you.
 
 You can enable touch coordinates in the Android developer menu: https://developer.android.com/studio/debug/dev-options#input
 
