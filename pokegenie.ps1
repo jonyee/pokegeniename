@@ -1,4 +1,4 @@
-﻿$menuAppraise_x=945
+$menuAppraise_x=945
 $menuAppriase_y=2070
 $appraise_y=1685
 $pokegenie_x=993
@@ -7,8 +7,12 @@ $center_x=540
 $center_y=1000
 $dismiss_y=700
 $name_y=997
-$ok_x=964
-$ok_y=1361
+$backspace_x=987
+$backspace_y=1938
+$gboardClip_x=544
+$gboardClip_y=1497
+$pasteRecent_x=332
+$pasteRecent_y=1697
 $nicknameok_y=1237
 $swipestart_x=900
 $swipeend_x=100
@@ -41,12 +45,16 @@ function Rename-Pokemon
     adb shell input tap $center_x $name_y
     Start-Sleep -Milliseconds 500
 
-    #Paste clipboard
-    adb shell input keyevent 279
+    #Long press backspace to delete name
+    adb shell input swipe $backspace_x $backspace_y $backspace_x $backspace_y 2000
+    
+    #Touch gboard clipboard button
+    adb shell input tap $gboardClip_x $gboardClip_y
+    Start-Sleep -Milliseconds 250
 
-    #Tap OK to confirm on keyboard input
-    adb shell input tap $ok_x $ok_y
-    Start-Sleep -Milliseconds 300
+    #Touch recent paste
+    adb shell input tap $pasteRecent_x $pasteRecent_y
+    Start-Sleep -Milliseconds 250
 
     #Tap OK in pogo
     adb shell input tap $center_x $nicknameok_y
